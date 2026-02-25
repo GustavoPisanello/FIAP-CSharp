@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\projeto2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|c:\\users\\labsfiap\\desktop\\projeto2\\projeto2\\alunopagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|solutionrelative:projeto2\\alunopagamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|c:\\users\\labsfiap\\desktop\\projeto2\\projeto2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|solutionrelative:projeto2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|c:\\users\\labsfiap\\desktop\\projeto2\\projeto2\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|solutionrelative:projeto2\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|c:\\users\\labsfiap\\desktop\\projeto2\\projeto2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E3F9E1A3-DA5B-4AAC-BE55-4FEDD61F0423}|projeto2\\projeto2.csproj|solutionrelative:projeto2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Form1.cs",
+              "RelativeDocumentMoniker": "projeto2\\Form1.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Form1.cs",
+              "RelativeToolTip": "projeto2\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T23:49:45.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AlunoPagamento.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\AlunoPagamento.cs",
+              "RelativeDocumentMoniker": "projeto2\\AlunoPagamento.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\AlunoPagamento.cs",
+              "RelativeToolTip": "projeto2\\AlunoPagamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T23:24:16.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Aluno.cs",
+              "RelativeDocumentMoniker": "projeto2\\Aluno.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Aluno.cs",
+              "RelativeToolTip": "projeto2\\Aluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T23:13:00.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Form1.cs",
+              "RelativeDocumentMoniker": "projeto2\\Form1.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\projeto2\\projeto2\\Form1.cs [Design]",
+              "RelativeToolTip": "projeto2\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T22:44:15.548Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
