@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("projeto2")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FIap.Usuarios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10b8182a3578c654c9a22a216ef8b69b0ae44fbe")]
-[assembly: System.Reflection.AssemblyProductAttribute("projeto2")]
-[assembly: System.Reflection.AssemblyTitleAttribute("projeto2")]
+[assembly: System.Reflection.AssemblyProductAttribute("FIap.Usuarios")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FIap.Usuarios")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
