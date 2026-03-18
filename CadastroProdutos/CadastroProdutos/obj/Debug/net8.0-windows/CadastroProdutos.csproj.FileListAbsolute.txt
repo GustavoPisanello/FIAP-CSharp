@@ -1,0 +1,17 @@
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.exe
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.deps.json
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.runtimeconfig.json
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.dll
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\bin\Debug\net8.0-windows\CadastroProdutos.pdb
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.FormPrincipal.resources
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.csproj.GenerateResource.cache
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.AssemblyInfoInputs.cache
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.AssemblyInfo.cs
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.csproj.CoreCompileInputs.cache
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.sourcelink.json
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.dll
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\refint\CadastroProdutos.dll
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.pdb
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\CadastroProdutos.genruntimeconfig.cache
+C:\Users\labsfiap\Desktop\FIAP-CSHARP\CadastroProdutos\CadastroProdutos\obj\Debug\net8.0-windows\ref\CadastroProdutos.dll
