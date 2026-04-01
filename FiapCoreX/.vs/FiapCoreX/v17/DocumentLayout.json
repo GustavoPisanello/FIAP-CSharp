@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\migrations\\20260401013800_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\migrations\\20260401013800_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\models\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiapcorex\\fiapcorex\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6144DF83-2DA2-4C0D-A482-CE2C5DCB354A}|FiapCoreX\\FiapCoreX.csproj|solutionrelative:fiapcorex\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260401013800_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Migrations\\20260401013800_InitialCreate.cs",
+              "RelativeDocumentMoniker": "FiapCoreX\\Migrations\\20260401013800_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Migrations\\20260401013800_InitialCreate.cs",
+              "RelativeToolTip": "FiapCoreX\\Migrations\\20260401013800_InitialCreate.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:38:00.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Program.cs",
+              "RelativeDocumentMoniker": "FiapCoreX\\Program.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Program.cs",
+              "RelativeToolTip": "FiapCoreX\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:30:03.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\appsettings.json",
+              "RelativeDocumentMoniker": "FiapCoreX\\appsettings.json",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\appsettings.json",
+              "RelativeToolTip": "FiapCoreX\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-01T01:27:27.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "FiapCoreX\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "FiapCoreX\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:22:39.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Models\\Aluno.cs",
+              "RelativeDocumentMoniker": "FiapCoreX\\Models\\Aluno.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Models\\Aluno.cs",
+              "RelativeToolTip": "FiapCoreX\\Models\\Aluno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T01:02:24.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "FiapCoreX\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\FiapCoreX\\FiapCoreX\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "FiapCoreX\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T00:59:25.529Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
