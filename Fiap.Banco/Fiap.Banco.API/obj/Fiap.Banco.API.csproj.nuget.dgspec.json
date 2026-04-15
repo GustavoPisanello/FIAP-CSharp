@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj": {}
+    "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj": {
+    "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
         "projectName": "Fiap.Banco.API",
-        "projectPath": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
+        "projectPath": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
         "packagesPath": "C:\\Users\\labsfiap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\obj\\",
+        "outputPath": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,6 +60,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.23, )"
             },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",

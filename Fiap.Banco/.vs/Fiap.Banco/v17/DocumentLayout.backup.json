@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\",
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\controllers\\agenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\controllers\\agenciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\fiap.banco.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\fiap.banco.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\models\\agencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\models\\agencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\fiap.banco\\fiap.banco.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EC5087C-0D19-4B68-93B7-C5760100CB6C}|Fiap.Banco.API\\Fiap.Banco.API.csproj|solutionrelative:fiap.banco.api\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,91 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20260408014943_CreateTables.cs",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs",
-              "RelativeToolTip": "Fiap.Banco.API\\Migrations\\20260408014943_CreateTables.cs",
+              "Title": "AgenciasController.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Controllers\\AgenciasController.cs",
+              "RelativeDocumentMoniker": "Fiap.Banco.API\\Controllers\\AgenciasController.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Controllers\\AgenciasController.cs",
+              "RelativeToolTip": "Fiap.Banco.API\\Controllers\\AgenciasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T01:49:43.801Z",
+              "WhenOpened": "2026-04-15T01:22:59.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Fiap.Banco.API\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Fiap.Banco.API\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T01:15:54.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "Fiap.Banco.API\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Cliente.cs",
+              "RelativeToolTip": "Fiap.Banco.API\\Models\\Cliente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T01:04:50.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Agencia.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Agencia.cs",
+              "RelativeDocumentMoniker": "Fiap.Banco.API\\Models\\Agencia.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Agencia.cs",
+              "RelativeToolTip": "Fiap.Banco.API\\Models\\Agencia.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T01:12:12.561Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Models\\Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Funcionario.cs",
               "RelativeDocumentMoniker": "Fiap.Banco.API\\Models\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSHARP\\Fiap.Banco\\Fiap.Banco.API\\Models\\Funcionario.cs",
               "RelativeToolTip": "Fiap.Banco.API\\Models\\Funcionario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-08T01:48:33.85Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Fiap.Banco.API.csproj",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\Fiap.Banco.API.csproj",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Fiap.Banco.API.csproj",
-              "RelativeToolTip": "Fiap.Banco.API\\Fiap.Banco.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-08T01:34:23.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Program.cs",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\Program.cs",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Program.cs",
-              "RelativeToolTip": "Fiap.Banco.API\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T01:32:52.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\appsettings.json",
-              "RelativeToolTip": "Fiap.Banco.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-08T01:27:12.244Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Fiap.Banco.API\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T01:18:08.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "Fiap.Banco.API\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSharp\\Fiap.Banco\\Fiap.Banco.API\\Models\\Cliente.cs",
-              "RelativeToolTip": "Fiap.Banco.API\\Models\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T01:04:50.457Z"
             }
           ]
         }
