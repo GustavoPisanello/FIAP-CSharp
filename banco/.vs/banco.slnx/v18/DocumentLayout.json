@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\banco\\banco\\conta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|solutionrelative:banco\\conta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\banco\\banco\\iconta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|solutionrelative:banco\\iconta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\banco\\banco\\movimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|solutionrelative:banco\\movimento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\banco\\banco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{906E180B-87E4-4F1F-B019-205BEB6FC850}|banco\\banco.csproj|solutionrelative:banco\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Movimento.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Movimento.cs",
+              "RelativeDocumentMoniker": "banco\\Movimento.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Movimento.cs",
+              "RelativeToolTip": "banco\\Movimento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:19:19.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conta.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Conta.cs",
+              "RelativeDocumentMoniker": "banco\\Conta.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Conta.cs",
+              "RelativeToolTip": "banco\\Conta.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA8wB4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:04:40.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IConta.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\IConta.cs",
+              "RelativeDocumentMoniker": "banco\\IConta.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\IConta.cs",
+              "RelativeToolTip": "banco\\IConta.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:01:49.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Program.cs",
+              "RelativeDocumentMoniker": "banco\\Program.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIAP-CSHARP\\banco\\banco\\Program.cs",
+              "RelativeToolTip": "banco\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-19T01:01:06.943Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
