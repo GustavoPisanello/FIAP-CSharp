@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DeliveryRush/DeliveryRush.csproj" />
+  <Project Path="DeliveryRush.Tests/DeliveryRush.Checks.csproj" />
+</Solution>

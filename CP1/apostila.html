@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>CP1 — DeliveryRush</title>
+<style>
+:root {
+  --bg: #08080d;
+  --card: #14141d;
+  --card-2: #1b1b27;
+  --fg: #f5f5f7;
+  --muted: #aaaab6;
+  --accent: #ed0973;
+  --accent-2: #ff65ae;
+  --border: #30303e;
+  --warning: #facc15;
+  --danger: #fb7185;
+  --success: #4ade80;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font: 17px/1.65 "Segoe UI", system-ui, sans-serif;
+}
+.progress { position: fixed; inset: 0 0 auto; height: 4px; z-index: 100; }
+.progress span { display: block; width: 0; height: 100%; background: var(--accent); }
+.topbar {
+  position: sticky; top: 0; z-index: 90;
+  padding: .8rem max(1rem, calc((100vw - 1180px) / 2));
+  background: rgba(8, 8, 13, .94); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.brand { color: var(--accent); font-weight: 900; text-decoration: none; letter-spacing: .06em; }
+.brand span { color: var(--fg); font-weight: 600; }
+.page { max-width: 1180px; margin: auto; padding: 0 1.2rem; }
+.hero {
+  padding: 5rem 0 3rem;
+  border-bottom: 3px solid var(--accent);
+  background: radial-gradient(circle at 80% 20%, rgba(237, 9, 115, .18), transparent 35%);
+}
+.eyebrow { color: var(--accent-2); font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+h1 { max-width: 850px; margin: .2rem 0 1rem; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; }
+.lead { max-width: 800px; color: var(--muted); font-size: 1.2rem; }
+.pills { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+.pills span { padding: .3rem .75rem; border: 1px solid var(--border); border-radius: 999px; color: var(--accent-2); }
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; padding: 3rem 0 5rem; }
+.layout > *, main, .toc { min-width: 0; }
+.toc { position: sticky; top: 4.5rem; align-self: start; display: grid; gap: .4rem; max-height: calc(100vh - 6rem); overflow: auto; }
+.toc strong { color: var(--accent); margin-bottom: .5rem; }
+.toc a { color: var(--muted); text-decoration: none; padding: .25rem 0; overflow-wrap: anywhere; }
+.toc a:hover { color: var(--fg); }
+.chapter { margin-bottom: 4.5rem; scroll-margin-top: 5rem; }
+h2 { margin: 0 0 1.4rem; color: var(--accent-2); font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.15; }
+.block-paragraph, .block-list, .block-quote, .block-table, .block-code, .callout, .cards-grid { margin: 1rem 0 1.4rem; }
+.block-code {
+  max-width: 100%; overflow: auto; padding: 1.1rem; border: 1px solid var(--border);
+  border-radius: 10px; background: #0d0d14; color: #f8d4e6;
+}
+.block-caption { color: var(--muted); font-size: .92rem; margin-top: -.8rem; }
+.block-table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.block-table th, .block-table td { padding: .7rem .8rem; border: 1px solid var(--border); text-align: left; }
+.block-table th { background: rgba(237, 9, 115, .16); color: var(--accent-2); }
+.block-quote { padding: 1rem 1.3rem; border-left: 4px solid var(--accent); background: var(--card); }
+.callout { padding: 1rem 1.2rem; border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 8px; background: var(--card); }
+.callout-priority, .callout-warning { border-left-color: var(--warning); }
+.callout-danger { border-left-color: var(--danger); }
+.callout-success { border-left-color: var(--success); }
+.cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.cards-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { min-width: 0; padding: 1.1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.card strong { display: block; color: var(--accent-2); margin-bottom: .45rem; }
+.card .block-paragraph, .card .block-list { margin-bottom: 0; }
+a { color: var(--accent-2); }
+.page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.page-nav a { text-decoration: none; font-weight: 700; }
+footer { padding: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+@media (max-width: 800px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .toc { position: static; max-height: none; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .cards-grid, .cards-cols-2 { grid-template-columns: 1fr; }
+}
+@media print {
+  .progress, .topbar, .toc, .page-nav { display: none; }
+  body { color: #111; background: #fff; font-size: 11pt; }
+  .page { max-width: none; }
+  .layout { display: block; padding-top: 1rem; }
+  .hero { padding: 1rem 0; background: none; }
+  .chapter { break-inside: avoid; margin-bottom: 2rem; }
+  .block-code, .card, .callout, .block-quote { color: #111; background: #fff; border-color: #999; }
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="reading-progress"></span></div>
+<header class="topbar">
+  <a class="brand" href="#top">FIAP <span>FIAP · C# Software Development</span></a>
+</header>
+
+<div class="page" id="top">
+  <header class="hero">
+<p class="eyebrow">CP1 · Enunciado e rubrica</p>    <h1>CP1 — DeliveryRush</h1>
+<p class="lead">Checkpoint prático <strong>individual</strong> sobre o projeto <strong>DeliveryRush</strong> — um gestor de pedidos de delivery.</p>    <div class="pills"><span>C#</span><span>POO leve</span><span>LINQ</span><span>Avaliação individual</span></div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Neste material">
+      <strong>Neste material</strong>
+<a href="#h01-objetivo">Objetivo e regras gerais</a><a href="#h02-dominio">O domínio: DeliveryRush</a><a href="#h04-formulas">Fórmulas e regras de negócio</a><a href="#h05-excecoes">Casos importantes</a><a href="#h06-comandos">Comandos</a><a href="#h08-entrega">Entrega</a><a href="#h09-rubrica">Sistema avaliativo — visão geral</a><a href="#h10-cat1">Categoria 1 — Compilação (peso 25%)</a><a href="#h11-cat2">Categoria 2 — Funcionalidade e testes (peso 45%)</a><a href="#h12-cat3">Categoria 3 — Contrato, modelagem e encapsulamento (peso 15%)</a><a href="#h13-cat4">Categoria 4 — Qualidade objetiva do código (peso 10%)</a><a href="#h14-cat5">Categoria 5 — Entrega e higiene (peso 5%)</a><a href="#h15-regra-comum">Regra comum às cinco categorias</a>    </nav>
+
+    <main>
+      <section class="chapter" id="h01-objetivo">
+        <h2>Objetivo e regras gerais</h2>
+        <p class="block-paragraph">Implemente os <code>TODOs</code> do DeliveryRush sem alterar assinaturas públicas, nomes de arquivos ou testes fornecidos.</p><ul class="block-list"><li>Prova individual e presencial.</li><li>O esqueleto já compila e possui testes públicos.</li><li>Você não cria nem altera testes.</li></ul>
+      </section>
+      <section class="chapter" id="h02-dominio">
+        <h2>O domínio: DeliveryRush</h2>
+        <p class="block-paragraph">O sistema calcula entregas padrão e expressa, mantém pedidos em memória e produz consultas e indicadores sobre esses pedidos.</p><div class="callout callout-default"><strong>Dica:</strong> implemente e teste uma etapa por vez: entregas → pedido → repositório → consultas.</div>
+      </section>
+      <section class="chapter" id="h04-formulas">
+        <h2>Fórmulas e regras de negócio</h2>
+        <table class="block-table"><thead><tr><th>Regra</th><th>Fórmula ou valor</th></tr></thead><tbody><tr><td>Taxa da entrega padrão</td><td>R$ 8,00 abaixo de R$ 80,00; R$ 0,00 a partir de R$ 80,00</td></tr><tr><td>Taxa da entrega expressa</td><td>15% do subtotal (arredondado com <code>MidpointRounding.AwayFromZero</code>), com mínimo de R$ 12,00</td></tr><tr><td>Subtotal do pedido</td><td>Valor recebido diretamente pelo construtor do pedido</td></tr><tr><td>Taxa de entrega do pedido</td><td><code>Entrega.CalcularTaxa(Subtotal)</code>, chamada de forma polimórfica</td></tr><tr><td>Total do pedido</td><td><code>Subtotal + TaxaEntrega</code></td></tr><tr><td>Faturamento total</td><td>Soma do <code>Total</code> de todos os pedidos</td></tr><tr><td>Ticket médio</td><td>Média do <code>Total</code> dos pedidos, ou ausente (<code>null</code>) quando não há pedidos</td></tr></tbody></table><p class="block-paragraph"><strong>Exemplo completo</strong> — um pedido com subtotal R$ 48,00 e <code>EntregaPadrao</code> tem taxa R$ 8,00 e total R$ 56,00.</p>
+      </section>
+      <section class="chapter" id="h05-excecoes">
+        <h2>Casos importantes</h2>
+        <table class="block-table"><thead><tr><th>Cenário</th><th>Comportamento esperado</th></tr></thead><tbody><tr><td><code>CalcularTaxa</code> com subtotal negativo (padrão ou expressa)</td><td><code>ArgumentOutOfRangeException</code></td></tr><tr><td>Entrega padrão com subtotal exatamente <code>80,00</code></td><td>Taxa <code>0,00</code>; o limite é inclusivo</td></tr><tr><td>Entrega expressa com percentual abaixo de <code>12,00</code></td><td>Taxa mínima <code>12,00</code></td></tr><tr><td>Pedido com número ou subtotal inválido</td><td><code>ArgumentOutOfRangeException</code></td></tr><tr><td>Pedido com cliente inválido</td><td><code>ArgumentException</code></td></tr><tr><td>Pedido com entrega nula</td><td><code>ArgumentNullException</code></td></tr><tr><td>Número de pedido duplicado</td><td><code>InvalidOperationException</code>, sem substituir o original</td></tr><tr><td>Pedido com <code>Total</code> exatamente igual a <code>totalMinimo</code></td><td>Incluído no resultado; o limite é inclusivo</td></tr><tr><td>Coleção vazia nos indicadores</td><td>Quantidade e faturamento zero; ticket médio <code>null</code></td></tr></tbody></table><div class="callout callout-default"><strong>Dica:</strong> os testes reservados usam valores diferentes, mas não criam regras novas.</div>
+      </section>
+      <section class="chapter" id="h06-comandos">
+        <h2>Comandos</h2>
+        <ul class="block-list"><li>Compilar: <code>dotnet build .\sources\DeliveryRush.slnx</code></li><li>Testar: <code>dotnet test .\sources\DeliveryRush.slnx</code></li><li>Executar o console visual: <code>dotnet run --project .\sources\DeliveryRush\DeliveryRush.csproj</code></li></ul>
+      </section>
+      <section class="chapter" id="h08-entrega">
+        <h2>Entrega</h2>
+        <ul class="block-list"><li>Envie o ZIP pelo Teams, dentro do prazo.</li><li>Preserve nomes, caminhos e arquivos obrigatórios.</li><li>Não altere os arquivos de teste públicos.</li><li>Antes de compactar, rode <code>dotnet clean</code> no Visual Studio Code ou <strong>Build → Clean Solution</strong> no Visual Studio.</li></ul>
+      </section>
+      <section class="chapter" id="h09-rubrica">
+        <h2>Sistema avaliativo — visão geral</h2>
+        <p class="block-paragraph">Cada categoria recebe de 0 a 100. Nota final = compilação × 25% + funcionalidade × 45% + contrato/modelagem × 15% + qualidade × 10% + entrega × 5%.</p><div class="callout callout-danger"><strong>Gate de compilação:</strong> se o projeto não compilar, a nota final fica limitada a 40, independentemente dos demais critérios.</div><p class="block-paragraph">A nota acadêmica, em escala de 0 a 10, é <code>final / 10</code>.</p><table class="block-table"><thead><tr><th>Categoria</th><th>Peso</th></tr></thead><tbody><tr><td><ol>
+<li>Compilação</li>
+</ol></td><td>25%</td></tr><tr><td><ol>
+<li>Funcionalidade e testes</li>
+</ol></td><td>45%</td></tr><tr><td><ol>
+<li>Contrato, modelagem e encapsulamento</li>
+</ol></td><td>15%</td></tr><tr><td><ol>
+<li>Qualidade objetiva do código</li>
+</ol></td><td>10%</td></tr><tr><td><ol>
+<li>Entrega e higiene</li>
+</ol></td><td>5%</td></tr></tbody></table>
+      </section>
+      <section class="chapter" id="h10-cat1">
+        <h2>Categoria 1 — Compilação (peso 25%)</h2>
+        <p class="block-paragraph"><strong>O que será avaliado</strong> — se a solução entregue restaura dependências e compila, sem qualquer edição do professor, pelos comandos publicados no enunciado.</p><p class="block-paragraph"><strong>O que se espera do aluno</strong> — preservar a solução, os projetos, as referências e as assinaturas necessárias; eliminar todos os erros de compilação antes de entregar.</p><p class="block-paragraph"><strong>O que adiciona pontos:</strong></p><table class="block-table"><thead><tr><th>Evidência</th><th>Pontos</th></tr></thead><tbody><tr><td>Restore e build terminam com código 0</td><td>100</td></tr></tbody></table><p class="block-paragraph"><strong>O que remove pontos:</strong></p><table class="block-table"><thead><tr><th>Falha</th><th>Pontos removidos</th></tr></thead><tbody><tr><td>Restore falha</td><td>100</td></tr><tr><td>Build falha, por qualquer erro de compilação</td><td>100</td></tr></tbody></table><div class="callout callout-default">Não há nota parcial nesta categoria: restore e build aprovados valem 100; qualquer falha faz a categoria receber 0.</div><div class="callout callout-danger"><strong>Importante:</strong> categoria Compilação com 0 não significa nota final zero; significa que a nota final máxima será 40.</div>
+      </section>
+      <section class="chapter" id="h11-cat2">
+        <h2>Categoria 2 — Funcionalidade e testes (peso 45%)</h2>
+        <p class="block-paragraph"><strong>O que será avaliado</strong> — o resultado observável das regras de negócio, das validações, do repositório e das consultas LINQ. A correção é feita exclusivamente por testes vinculados a requisitos numerados no enunciado.</p><p class="block-paragraph"><strong>O que se espera do aluno</strong> — implementar cada <code>TODO</code> sem alterar os contratos, executar os testes públicos durante a atividade e conferir os casos-limite descritos no enunciado.</p><p class="block-paragraph"><strong>O que adiciona pontos</strong> — os testes de cada grupo somam exatamente os pontos abaixo; um teste aprovado adiciona o valor indicado a ele:</p><table class="block-table"><thead><tr><th>Grupo funcional</th><th>Pontos</th></tr></thead><tbody><tr><td>Taxa da entrega padrão, incluindo limite de R$ 80,00</td><td>10</td></tr><tr><td>Taxa da entrega expressa, incluindo mínimo de R$ 12,00</td><td>10</td></tr><tr><td>Validação, inicialização, taxa e total de Pedido</td><td>30</td></tr><tr><td>Cadastro, duplicidade, busca e snapshot do repositório</td><td>20</td></tr><tr><td>Filtro, ordenação, desempate e agregações LINQ</td><td>30</td></tr></tbody></table><p class="block-paragraph"><strong>O que remove pontos</strong> — cada teste reprovado deixa de conceder apenas os pontos daquele teste; não há desconto adicional pelo mesmo teste. Se vários testes representam requisitos diferentes, cada requisito afetado perde seus próprios pontos. Se o projeto não compilar, ou se o harness não compilar porque uma assinatura obrigatória foi alterada, a categoria inteira recebe zero.</p><div class="callout callout-default">Testes públicos cobrem aproximadamente 60 pontos; testes reservados cobrem os 40 pontos restantes com limites, coleção vazia, duplicidade e valores diferentes. Nenhum teste reservado cobra regra ausente do enunciado.</div>
+      </section>
+      <section class="chapter" id="h12-cat3">
+        <h2>Categoria 3 — Contrato, modelagem e encapsulamento (peso 15%)</h2>
+        <p class="block-paragraph"><strong>O que será avaliado</strong> — se a implementação preserva a API fornecida e aplica apenas os elementos mínimos de POO exigidos: herança, interface, encapsulamento, tipos monetários e estado derivado.</p><p class="block-paragraph"><strong>O que se espera do aluno</strong> — completar os corpos dos métodos sem redesenhar o esqueleto; manter coleções privadas, propriedades conforme o acesso indicado e os relacionamentos de tipo apresentados.</p><p class="block-paragraph"><strong>O que adiciona pontos</strong> — cada requisito estrutural atendido concede seu bloco de pontos:</p><table class="block-table"><thead><tr><th>Requisito atendido</th><th>Pontos</th></tr></thead><tbody><tr><td>Todos os tipos e assinaturas públicas obrigatórios foram preservados</td><td>20</td></tr><tr><td>EntregaPadrao e EntregaExpressa herdam de Entrega</td><td>15</td></tr><tr><td>Pedido calcula a taxa por uma referência do tipo Entrega</td><td>10</td></tr><tr><td>InMemoryPedidoRepository implementa IPedidoRepository</td><td>15</td></tr><tr><td>O repositório não expõe sua coleção interna para alteração externa</td><td>20</td></tr><tr><td>Propriedades somente leitura não possuem set público</td><td>10</td></tr><tr><td>Todo valor monetário obrigatório usa decimal</td><td>5</td></tr><tr><td>Taxa e total são derivados do subtotal e da entrega atual</td><td>5</td></tr></tbody></table><p class="block-paragraph"><strong>O que remove pontos</strong> — cada requisito não atendido remove exatamente o valor do seu bloco. Exemplo: expor a coleção mutável do repositório remove 20 pontos; não implementar a interface remove 15. A falha em um bloco não remove pontos de outro, exceto quando também produzir uma falha funcional independente nos testes. Não há desconto por “arquitetura ruim” ou outra avaliação genérica.</p><div class="callout callout-default">Essas verificações são feitas por testes de reflexão e inspeções automatizadas listadas no relatório, nunca por impressão geral do professor.</div>
+      </section>
+      <section class="chapter" id="h13-cat4">
+        <h2>Categoria 4 — Qualidade objetiva do código (peso 10%)</h2>
+        <p class="block-paragraph"><strong>O que será avaliado</strong> — somente convenções publicadas e detectáveis pelo compilador, <code>.editorconfig</code>, <code>dotnet format</code> ou inspeção determinística. A semântica dos nomes não é julgada subjetivamente; esta categoria verifica a forma dos identificadores.</p><p class="block-paragraph"><strong>O que se espera do aluno</strong> — usar PascalCase, camelCase e <code>_camelCase</code> nos locais indicados, manter modificadores de acesso, chaves e formatação, e entregar sem warnings pertencentes à lista publicada do CP1.</p><p class="block-paragraph"><strong>O que adiciona pontos</strong> — a categoria possui oito blocos; cada bloco concede sua pontuação integral quando nenhuma infração daquele tipo existe:</p><table class="block-table"><thead><tr><th>Bloco sem infrações</th><th>Pontos</th></tr></thead><tbody><tr><td>Classes, métodos, propriedades e enums em PascalCase</td><td>20</td></tr><tr><td>Variáveis locais e parâmetros em camelCase</td><td>15</td></tr><tr><td>Campos privados em _camelCase</td><td>10</td></tr><tr><td>Interfaces com prefixo I e PascalCase</td><td>5</td></tr><tr><td>Modificadores de acesso exigidos</td><td>10</td></tr><tr><td>Chaves em estruturas de controle</td><td>10</td></tr><tr><td>Formatação aceita por dotnet format --verify-no-changes</td><td>15</td></tr><tr><td>Ausência dos warnings publicados para o CP1</td><td>15</td></tr></tbody></table><p class="block-paragraph"><strong>O que remove pontos</strong> — uma ocorrência remove pontos apenas do bloco correspondente, até zerá-lo:</p><table class="block-table"><thead><tr><th>Infração objetiva</th><th>Desconto por ocorrência</th><th>Máximo removido</th></tr></thead><tbody><tr><td>Classe, método, propriedade ou enum fora de PascalCase</td><td>5</td><td>20</td></tr><tr><td>Variável local ou parâmetro fora de camelCase</td><td>3</td><td>15</td></tr><tr><td>Campo privado fora de _camelCase</td><td>2</td><td>10</td></tr><tr><td>Interface sem prefixo I ou fora de PascalCase</td><td>5</td><td>5</td></tr><tr><td>Membro sem modificador de acesso exigido</td><td>2</td><td>10</td></tr><tr><td>Estrutura de controle sem chaves</td><td>2</td><td>10</td></tr><tr><td>Arquivo apontado pelo verificador de formatação</td><td>5</td><td>15</td></tr><tr><td>Warning publicado de compilador/analyzer</td><td>3</td><td>15</td></tr></tbody></table><p class="block-paragraph"><strong>Lista fechada de warnings avaliáveis:</strong> qualquer warning de compilador <code>CS*</code>; <code>CA1305</code>, <code>CA1828</code>, <code>CA1849</code>, <code>CA1851</code>, <code>CA1860</code>, <code>CA2000</code>, <code>CA2016</code>, <code>CA2100</code>, <code>CA2208</code>, <code>CA5350</code>; e <code>SA1122</code>. Diagnósticos de naming, acesso e chaves já pertencem aos blocos anteriores e não são descontados novamente como warning.</p><div class="callout callout-default">Uma mesma localização não é descontada duas vezes pela mesma regra. “Código bonito”, “elegância”, “criatividade”, quantidade de comentários e preferência pessoal do corretor não entram na nota.</div>
+      </section>
+      <section class="chapter" id="h14-cat5">
+        <h2>Categoria 5 — Entrega e higiene (peso 5%)</h2>
+        <p class="block-paragraph"><strong>O que será avaliado</strong> — se o material recebido está acessível, completo, no caminho informado e sem artefatos gerados, e se os testes públicos permanecem íntegros.</p><p class="block-paragraph"><strong>O que se espera do aluno</strong> — entregar o ZIP pelo Teams, preservar nomes e estrutura, não alterar testes e limpar os artefatos de build.</p><p class="block-paragraph"><strong>O que adiciona pontos</strong> — cada condição atendida concede seu bloco:</p><table class="block-table"><thead><tr><th>Condição atendida</th><th>Pontos</th></tr></thead><tbody><tr><td>ZIP abre e foi entregue pelo Teams dentro do prazo</td><td>20</td></tr><tr><td>Solução e projeto estão no caminho obrigatório</td><td>20</td></tr><tr><td>Todos os arquivos obrigatórios mantêm nome e localização</td><td>20</td></tr><tr><td>Nenhum artefato proibido foi incluído</td><td>20</td></tr><tr><td>Projeto e arquivos de testes públicos estão íntegros</td><td>20</td></tr></tbody></table><p class="block-paragraph"><strong>O que remove pontos</strong> — cada condição não atendida remove os 20 pontos do bloco correspondente. ZIP inacessível zera a categoria. Alterar vários testes ou incluir vários artefatos não causa desconto além dos 20 pontos do respectivo bloco.</p>
+      </section>
+      <section class="chapter" id="h15-regra-comum">
+        <h2>Regra comum às cinco categorias</h2>
+        <ul class="block-list"><li>Cada categoria começa em 0 e pode conquistar no máximo 100 pontos pelos blocos publicados.</li><li>As tabelas de remoção descrevem a perda do mesmo conjunto de pontos, não uma segunda penalidade além da tabela de adição.</li><li>Não existem pontos extras, bônus por criatividade ou nota acima de 100.</li><li>Todo ponto concedido ou removido aparece no relatório com: categoria, requisito/regra, evidência, pontos possíveis, pontos obtidos e orientação de correção.</li><li>A rubrica completa acompanha o enunciado.</li></ul>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>Professor Cassiolato</footer>
+<script>
+function updateReadingProgress() {
+  const root = document.documentElement;
+  const scrollable = root.scrollHeight - root.clientHeight;
+  const percent = scrollable > 0 ? (root.scrollTop / scrollable) * 100 : 0;
+  document.getElementById("reading-progress").style.width = `${percent}%`;
+}
+document.addEventListener("scroll", updateReadingProgress, { passive: true });
+updateReadingProgress();
+
+</script>
+</body>
+</html>

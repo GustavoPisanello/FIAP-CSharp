@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\cp1\\sources\\deliveryrush\\services\\pedidoconsultaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|solutionrelative:deliveryrush\\services\\pedidoconsultaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\cp1\\sources\\deliveryrush\\services\\pedidoresumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|solutionrelative:deliveryrush\\services\\pedidoresumo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\cp1\\sources\\deliveryrush\\domain\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|solutionrelative:deliveryrush\\domain\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\cp1\\sources\\deliveryrush\\repositories\\inmemorypedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|solutionrelative:deliveryrush\\repositories\\inmemorypedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\cp1\\sources\\deliveryrush\\repositories\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{102AD89F-FD32-879B-54C9-9B03D8C26109}|DeliveryRush\\DeliveryRush.csproj|solutionrelative:deliveryrush\\repositories\\ipedidorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PedidoResumo.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Services\\PedidoResumo.cs",
+              "RelativeDocumentMoniker": "DeliveryRush\\Services\\PedidoResumo.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Services\\PedidoResumo.cs",
+              "RelativeToolTip": "DeliveryRush\\Services\\PedidoResumo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:53:30.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidoConsultaService.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Services\\PedidoConsultaService.cs",
+              "RelativeDocumentMoniker": "DeliveryRush\\Services\\PedidoConsultaService.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Services\\PedidoConsultaService.cs",
+              "RelativeToolTip": "DeliveryRush\\Services\\PedidoConsultaService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:48:45.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPedidoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Repositories\\IPedidoRepository.cs",
+              "RelativeDocumentMoniker": "DeliveryRush\\Repositories\\IPedidoRepository.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Repositories\\IPedidoRepository.cs",
+              "RelativeToolTip": "DeliveryRush\\Repositories\\IPedidoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:48:36.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InMemoryPedidoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Repositories\\InMemoryPedidoRepository.cs",
+              "RelativeDocumentMoniker": "DeliveryRush\\Repositories\\InMemoryPedidoRepository.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Repositories\\InMemoryPedidoRepository.cs",
+              "RelativeToolTip": "DeliveryRush\\Repositories\\InMemoryPedidoRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:47:11.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Domain\\Pedido.cs",
+              "RelativeDocumentMoniker": "DeliveryRush\\Domain\\Pedido.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\Fiap-CSharp\\CP1\\sources\\DeliveryRush\\Domain\\Pedido.cs",
+              "RelativeToolTip": "DeliveryRush\\Domain\\Pedido.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-26T01:47:00.511Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
