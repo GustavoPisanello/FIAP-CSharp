@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\pokemon\\pokemon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|solutionrelative:pokemon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\pokemon\\pokemon\\pokemonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|solutionrelative:pokemon\\pokemonresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\pokemon\\pokemon\\pokemoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|solutionrelative:pokemon\\pokemoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|c:\\users\\labsfiap\\desktop\\fiap-csharp\\pokemon\\pokemon\\pokemondetalhado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EF77F95-4691-D5B7-6DC2-8DC5D89E8136}|Pokemon\\Pokemon.csproj|solutionrelative:pokemon\\pokemondetalhado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PokemonResponse.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonResponse.cs",
+              "RelativeDocumentMoniker": "Pokemon\\PokemonResponse.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonResponse.cs",
+              "RelativeToolTip": "Pokemon\\PokemonResponse.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAYwBwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:19:03.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PokemonInput.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonInput.cs",
+              "RelativeDocumentMoniker": "Pokemon\\PokemonInput.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonInput.cs",
+              "RelativeToolTip": "Pokemon\\PokemonInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T00:56:31.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\Program.cs",
+              "RelativeDocumentMoniker": "Pokemon\\Program.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\Program.cs",
+              "RelativeToolTip": "Pokemon\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T00:56:29.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PokemonDetalhado.cs",
+              "DocumentMoniker": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonDetalhado.cs",
+              "RelativeDocumentMoniker": "Pokemon\\PokemonDetalhado.cs",
+              "ToolTip": "C:\\Users\\labsfiap\\Desktop\\FIap-CSHARP\\Pokemon\\Pokemon\\PokemonDetalhado.cs",
+              "RelativeToolTip": "Pokemon\\PokemonDetalhado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T01:32:18.972Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

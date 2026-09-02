@@ -1,0 +1,15 @@
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\bin\Debug\net10.0\Pokemon.exe
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\bin\Debug\net10.0\Pokemon.deps.json
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\bin\Debug\net10.0\Pokemon.runtimeconfig.json
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\bin\Debug\net10.0\Pokemon.dll
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\bin\Debug\net10.0\Pokemon.pdb
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.AssemblyInfoInputs.cache
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.AssemblyInfo.cs
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.csproj.CoreCompileInputs.cache
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.sourcelink.json
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.dll
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\refint\Pokemon.dll
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.pdb
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\Pokemon.genruntimeconfig.cache
+C:\Users\labsfiap\Desktop\FIap-CSHARP\Pokemon\Pokemon\obj\Debug\net10.0\ref\Pokemon.dll

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula 3 — Integração web e arquivos — Atividade</title>
+  <link rel="icon" href="data:,">
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #090d18;
+  --surface: #111827;
+  --surface-2: #182235;
+  --border: #2b3952;
+  --fg: #e5edf9;
+  --muted: #93a4bf;
+  --accent: #38bdf8;
+  --danger: #fb7185;
+  --warning: #fbbf24;
+  --success: #34d399;
+  --optional: #a78bfa;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Segoe UI", sans-serif;
+}
+header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: .7rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+header strong { color: var(--accent); font-size: 1.15rem; }
+header span { color: var(--muted); font-size: .82rem; }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.clear-button {
+  padding: .45rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .75rem;
+}
+.progress-tracker {
+  width: 150px;
+  display: grid;
+  gap: .35rem;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: .72rem;
+}
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #080d18;
+}
+.progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--success));
+  transition: width .3s ease;
+}
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+aside {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  border-right: 1px solid var(--border);
+  background: #0d1321;
+}
+.filter {
+  width: 100%;
+  margin-bottom: .5rem;
+  padding: .75rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+}
+.filter.active {
+  border-color: var(--border);
+  background: var(--surface-2);
+  color: var(--fg);
+}
+.filter.completed { color: var(--success); }
+.filter.optional { color: #c4b5fd; }
+.content {
+  min-height: 0;
+  padding: 1.2rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.toolbar h1 { margin: 0; font-size: 1.4rem; }
+.badge {
+  display: inline-block;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, .14);
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge.optional {
+  background: rgba(167, 139, 250, .14);
+  color: #c4b5fd;
+}
+.ticket {
+  display: none;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.ticket.active {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.ticket-head {
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.ticket-head h2 { margin: .4rem 0 0; font-size: 1.25rem; }
+.ticket-body {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1.4rem;
+  overflow-y: auto;
+}
+.panel {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #0d1423;
+}
+.panel h3 {
+  margin: 0 0 .7rem;
+  color: var(--accent);
+  font-size: .85rem;
+  text-transform: uppercase;
+}
+.panel p { margin: 0; line-height: 1.55; }
+.panel .block-paragraph { margin: 0 0 .5rem; }
+.panel .block-paragraph:last-child { margin-bottom: 0; }
+.panel ol, .panel ul, .panel .block-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  line-height: 1.6;
+}
+.panel li { margin-bottom: .25rem; }
+.implementation { border-left: 4px solid var(--warning); }
+.acceptance { border-left: 4px solid var(--success); }
+.validation { border-left: 4px solid var(--accent); }
+.dependency { border-left: 4px solid var(--optional); }
+.references { border-left: 4px solid var(--accent); }
+.block-table, table { width: 100%; border-collapse: collapse; }
+.block-table th, .block-table td, th, td {
+  padding: .45rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: .85rem;
+}
+.block-table th, th { width: 42%; color: var(--muted); }
+.callout {
+  margin: .6rem 0 0;
+  padding: .7rem .9rem;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, .1);
+}
+code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: #080d18;
+  color: #bae6fd;
+}
+pre, .block-code {
+  margin: .7rem 0 0;
+  padding: .8rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: #080d18;
+}
+pre code, .block-code code { padding: 0; color: var(--fg); }
+.cards-grid { display: grid; gap: .7rem; margin-top: .5rem; }
+.cards-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cards-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.card {
+  padding: .7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0d1423;
+}
+.ticket-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1.4rem 1rem;
+}
+.complete-button {
+  min-width: 165px;
+  padding: .58rem .9rem;
+  border: 1px solid #2f855f;
+  border-radius: 8px;
+  background: #143b2d;
+  color: #b8f7d9;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: .8rem;
+}
+.complete-button.completed {
+  border-color: #52627b;
+  background: #202b3d;
+  color: #d1d9e8;
+}
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: .55rem;
+  padding: .3rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .72rem;
+}
+.spark {
+  position: fixed;
+  z-index: 1000;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--warning);
+  pointer-events: none;
+  animation: spark .65s ease-out forwards;
+}
+@keyframes spark {
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(.2);
+  }
+}
+#fireworks {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media (max-width: 820px) {
+  html, body { overflow: auto; height: auto; }
+  main { grid-template-columns: 1fr; }
+  aside {
+    display: flex;
+    gap: .5rem;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter { min-width: 210px; }
+  .content { min-height: 720px; }
+  .ticket-body { grid-template-columns: 1fr; }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <strong>Tickets da atividade</strong>
+      <span>Aula 3 — Integração web e arquivos</span>
+    </div>
+    <div class="header-actions">
+      <button class="clear-button" id="clear-progress" type="button">Limpar</button>
+      <div class="progress-tracker">
+        <div class="progress-label">
+          <span>Progresso</span>
+          <strong id="progress-value">0%</strong>
+        </div>
+        <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <button class="filter active" data-ticket="LAB-001">LAB-001 · Preparar o projeto e a entrada</button>
+      <button class="filter" data-ticket="LAB-002">LAB-002 · Ler os nomes do arquivo</button>
+      <button class="filter" data-ticket="LAB-003">LAB-003 · Consultar a PokéAPI</button>
+      <button class="filter" data-ticket="LAB-004">LAB-004 · Criar os objetos detalhados</button>
+      <button class="filter" data-ticket="LAB-005">LAB-005 · Salvar o arquivo enriquecido</button>
+      <button class="filter" data-ticket="LAB-006">LAB-006 · Criar o menu principal</button>
+      <button class="filter" data-ticket="LAB-007">LAB-007 · Ler o arquivo enriquecido</button>
+      <button class="filter" data-ticket="LAB-008">LAB-008 · Enriquecer o arquivo pelo menu</button>
+      <button class="filter optional" data-ticket="EXTRA-009">EXTRA-009 · Tratar Pokémon inexistente</button>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <h1>Tickets da atividade</h1>
+        <span class="badge">8 obrigatórios · 1 opcionais</span>
+      </div>
+
+      <article class="ticket active" id="LAB-001" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Setup</span>
+          <h2>Preparar o projeto e a entrada</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p class="block-paragraph">Este ticket inicia o laboratório e não possui dependências.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Criar um projeto Console chamado <code>PokedexArquivo</code>.</li><li>Criar <code>pokemons.json</code> com os cinco nomes apresentados em <code>entrada</code>.</li><li>Criar a classe <code>PokemonInput</code> com a propriedade <code>List&lt;string&gt; Nomes</code>.</li><li>Configurar o arquivo para ser copiado para a pasta de saída.</li></ol><pre class="block-code"><code>&lt;ItemGroup&gt;
+  &lt;None Update=&quot;pokemons.json&quot;&gt;
+    &lt;CopyToOutputDirectory&gt;PreserveNewest&lt;/CopyToOutputDirectory&gt;
+  &lt;/None&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>O projeto compila sem avisos.</li><li><code>pokemons.json</code> aparece ao lado do executável.</li><li>A lista de entrada contém exatamente cinco nomes.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <pre class="block-code"><code>dotnet new console -n PokedexArquivo
+dotnet build .\PokedexArquivo
+</code></pre>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/core/project-sdk/msbuild-props#copytooutputdirectory">Arquivos em projetos do SDK do .NET</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-001">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-002" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Arquivos e JSON</span>
+          <h2>Ler os nomes do arquivo</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-001</code>.</p>
+            <p class="block-paragraph">Concluir <code>LAB-001</code> antes de implementar a leitura.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Ler o conteúdo com <code>File.ReadAllTextAsync</code>.</li><li>Desserializar com <code>JsonSerializer.Deserialize&lt;PokemonInput&gt;</code>.</li><li>Interromper com <code>JsonException</code> quando o conteúdo não produzir um objeto.</li><li>Exibir os nomes no terminal para conferir a entrada.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>Os cinco nomes são obtidos do arquivo.</li><li>Nenhum nome está fixo em <code>Program.cs</code>.</li><li>Arquivo ausente ou JSON inválido não produz sucesso aparente.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <ol class="block-list"><li>Executar com o arquivo original.</li><li>Remover temporariamente uma vírgula e confirmar a falha de formato.</li><li>Restaurar o JSON antes de continuar.</li></ol>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/api/system.io.file.readalltextasync">File.ReadAllTextAsync</a></li><li><a href="https://learn.microsoft.com/dotnet/standard/serialization/system-text-json/deserialization">Como desserializar JSON no .NET</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-002">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-003" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Cliente HTTP</span>
+          <h2>Consultar a PokéAPI</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-002</code>.</p>
+            <p class="block-paragraph">Usar os nomes carregados em <code>LAB-002</code> para consultar <code>https://pokeapi.co/api/v2/pokemon/{nome}</code>.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Criar um único <code>HttpClient</code> com a URL base da PokéAPI.</li><li>Criar <code>PokemonApiResponse</code> para representar ID, nome, altura, peso, imagem e lista de tipos.</li><li>Criar os modelos auxiliares necessários para representar <code>sprites</code> e <code>types</code> da resposta.</li><li>Usar <code>JsonPropertyName</code> quando o nome recebido em JSON não corresponder ao padrão das propriedades C#.</li><li>Consultar cada nome com <code>GetFromJsonAsync</code> e aguardar a resposta.</li><li>Reunir as respostas recebidas para a etapa de transformação.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>É realizada uma requisição para cada nome.</li><li>A aplicação utiliza um único <code>HttpClient</code>.</li><li>ID, nome, altura, peso, tipos e imagem são desserializados.</li><li>As chamadas utilizam <code>await</code>.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <table class="block-table"><thead><tr><th>Nome</th><th>ID esperado</th><th>Tipo principal</th></tr></thead><tbody><tr><td>pikachu</td><td>25</td><td>electric</td></tr><tr><td>bulbasaur</td><td>1</td><td>grass</td></tr><tr><td>charizard</td><td>6</td><td>fire</td></tr></tbody></table>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/fundamentals/networking/http/httpclient-guidelines">Diretrizes para HttpClient</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.net.http.json.httpclientjsonextensions.getfromjsonasync">HttpClientJsonExtensions.GetFromJsonAsync</a></li><li><a href="https://pokeapi.co/docs/v2">Documentação da PokéAPI</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-003">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-004" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Mapeamento</span>
+          <h2>Criar os objetos detalhados</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-003</code>.</p>
+            <p class="block-paragraph">Transformar cada resposta obtida em <code>LAB-003</code> no modelo próprio <code>PokemonDetalhado</code>.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Criar o record <code>PokemonDetalhado</code> com ID, nome, altura em metros, peso em quilogramas, lista de tipos e endereço da imagem.</li><li>Converter altura de decímetros para metros.</li><li>Converter peso de hectogramas para quilogramas.</li><li>Extrair os nomes dos tipos com <code>Select</code>.</li><li>Adicionar o objeto transformado à coleção final.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>Pikachu possui <code>0.4</code> metro e <code>6</code> quilogramas.</li><li>Bulbasaur contém os tipos <code>grass</code> e <code>poison</code>.</li><li>A coleção final não expõe a estrutura completa da PokéAPI.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <pre class="block-code"><code>25 | pikachu   | 0,4 m | 6 kg   | electric
+ 1 | bulbasaur | 0,7 m | 6,9 kg | grass, poison
+</code></pre>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/record">Records em C#</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.linq.enumerable.select">Enumerable.Select</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-004">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-005" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Persistência JSON</span>
+          <h2>Salvar o arquivo enriquecido</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-004</code>.</p>
+            <p class="block-paragraph">Persistir a coleção criada em <code>LAB-004</code> em um arquivo legível.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Configurar a serialização para produzir um documento indentado.</li><li>Configurar os nomes das propriedades no padrão camelCase.</li><li>Serializar a coleção de <code>PokemonDetalhado</code>.</li><li>Salvar o conteúdo em <code>pokemons-detalhados.json</code> com uma operação assíncrona.</li><li>Informar quantos Pokémon foram salvos e apresentar o caminho completo do arquivo.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li><code>pokemons-detalhados.json</code> é criado.</li><li>O arquivo contém cinco objetos.</li><li>As propriedades usam camelCase.</li><li>O conteúdo está indentado e pode ser desserializado.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <ol class="block-list"><li>Abrir o arquivo e localizar Pikachu.</li><li>Confirmar <code>alturaMetros: 0.4</code> e <code>pesoQuilos: 6</code>.</li><li>Executar novamente e confirmar que o arquivo é atualizado.</li></ol>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/standard/serialization/system-text-json/how-to">Como serializar JSON no .NET</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions.writeindented">JsonSerializerOptions.WriteIndented</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-005">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-006" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Fluxo da aplicação</span>
+          <h2>Criar o menu principal</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-005</code>.</p>
+            <p class="block-paragraph">Organizar as funcionalidades concluídas até <code>LAB-005</code> em uma aplicação interativa que permanece aberta até o usuário solicitar a saída.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Exibir as opções <code>1 - Ler arquivo enriquecido</code>, <code>2 - Enriquecer arquivo</code> e <code>0 - Sair</code>.</li><li>Ler a opção informada pelo usuário.</li><li>Manter o menu em repetição após a conclusão de cada operação.</li><li>Encerrar a aplicação somente quando a opção <code>0</code> for selecionada.</li><li>Apresentar uma mensagem clara para opções inválidas e exibir o menu novamente.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>As três opções são exibidas com descrições compreensíveis.</li><li>O menu reaparece depois das opções <code>1</code> e <code>2</code>.</li><li>A opção <code>0</code> encerra a repetição.</li><li>Uma opção inválida não encerra nem trava a aplicação.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <ol class="block-list"><li>Informar uma opção inválida e confirmar a nova exibição do menu.</li><li>Selecionar <code>1</code> e confirmar que a aplicação retorna ao menu.</li><li>Selecionar <code>2</code> e confirmar que a aplicação retorna ao menu.</li><li>Selecionar <code>0</code> e confirmar o encerramento.</li></ol>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/statements/selection-statements">Instruções de seleção em C#</a></li><li><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/statements/iteration-statements">Instruções de iteração em C#</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-006">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-007" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Consulta local</span>
+          <h2>Ler o arquivo enriquecido</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-006</code>.</p>
+            <p class="block-paragraph">Implementar a opção <code>1</code> do menu criado em <code>LAB-006</code>.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Verificar se <code>pokemons-detalhados.json</code> existe antes da leitura.</li><li>Ler o arquivo com uma operação assíncrona.</li><li>Desserializar o conteúdo para uma coleção de <code>PokemonDetalhado</code>.</li><li>Apresentar ID, nome, altura, peso e tipos de cada Pokémon.</li><li>Quando o arquivo ainda não existir, orientar o usuário a executar primeiro a opção de enriquecimento.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>A opção <code>1</code> não realiza chamadas à PokéAPI.</li><li>Todos os objetos presentes no arquivo são apresentados.</li><li>A ausência do arquivo produz uma orientação compreensível.</li><li>Após a apresentação, a aplicação retorna ao menu.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <ol class="block-list"><li>Remover temporariamente o arquivo enriquecido e selecionar <code>1</code>.</li><li>Restaurar ou gerar o arquivo e selecionar <code>1</code> novamente.</li><li>Comparar os dados exibidos com o conteúdo do JSON.</li></ol>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/api/system.io.file.exists">File.Exists</a></li><li><a href="https://learn.microsoft.com/dotnet/csharp/asynchronous-programming/using-async-for-file-access">Acesso assíncrono a arquivos</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-007">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="LAB-008" data-required="true">
+        <div class="ticket-head">
+          <span class="badge">Orquestração</span>
+          <h2>Enriquecer o arquivo pelo menu</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-007</code>.</p>
+            <p class="block-paragraph">Implementar a opção <code>2</code> do menu reutilizando o fluxo construído entre <code>LAB-002</code> e <code>LAB-005</code>.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ol class="block-list"><li>Mover o fluxo de enriquecimento para uma operação assíncrona própria.</li><li>Ler <code>pokemons.json</code>, consultar a PokéAPI, transformar as respostas e salvar o resultado.</li><li>Substituir o arquivo enriquecido existente pelos dados da nova execução.</li><li>Apresentar uma mensagem de conclusão com a quantidade de Pokémon processados.</li><li>Retornar ao menu sem duplicar a lógica já implementada.</li></ol>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>A opção <code>2</code> executa o fluxo completo de enriquecimento.</li><li>O arquivo final é criado ou atualizado.</li><li>A lógica de enriquecimento existe em um único local.</li><li>Após a conclusão, a aplicação retorna ao menu.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <ol class="block-list"><li>Alterar a lista de nomes em <code>pokemons.json</code>.</li><li>Selecionar <code>2</code> e conferir a quantidade processada.</li><li>Selecionar <code>1</code> e confirmar que os novos dados são apresentados.</li></ol>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/csharp/asynchronous-programming/">Programação assíncrona com async e await</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.io.file.writealltextasync">File.WriteAllTextAsync</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="LAB-008">Marcar como concluído</button>
+        </div>
+      </article>
+      <article class="ticket" id="EXTRA-009" data-required="false">
+        <div class="ticket-head">
+          <span class="badge optional">Desafio</span>
+          <h2>Tratar Pokémon inexistente</h2>
+        </div>
+        <div class="ticket-body">
+          <div class="panel dependency">
+            <h3>Dependência</h3>
+            <p>Concluir <code>LAB-008</code>.</p>
+            <p class="block-paragraph">Adicionar <code>missingno</code> ao arquivo de entrada após concluir <code>LAB-008</code>.</p>
+          </div>
+          <div class="panel implementation">
+            <h3>Implementação solicitada</h3>
+            <ul class="block-list"><li>Usar <code>GetAsync</code> para inspecionar o código de status.</li><li>Registrar o nome não encontrado no terminal.</li><li>Continuar o processamento dos demais nomes.</li><li>Não criar um objeto vazio para a resposta <code>404 Not Found</code>.</li></ul>
+          </div>
+          <div class="panel acceptance">
+            <h3>Critérios de aceite</h3>
+            <ul class="block-list"><li>A mensagem identifica o nome não encontrado.</li><li>Os demais Pokémon continuam no arquivo final.</li><li>Somente a resposta <code>404</code> recebe esse tratamento.</li></ul>
+          </div>
+          <div class="panel validation">
+            <h3>Validação</h3>
+            <p class="block-paragraph">Executar com <code>missingno</code> entre dois nomes válidos e confirmar que o arquivo final contém somente os válidos.</p>
+          </div>
+          <div class="panel references">
+            <h3>Referências</h3>
+            <ul class="block-list"><li><a href="https://learn.microsoft.com/dotnet/api/system.net.http.httpclient.getasync">HttpClient.GetAsync</a></li><li><a href="https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage.statuscode">HttpResponseMessage.StatusCode</a></li></ul>
+          </div>
+        </div>
+        <div class="ticket-footer">
+          <button class="complete-button" data-complete="EXTRA-009">Marcar como concluído</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>Professor Rafael Cassiolato</span>
+  </footer>
+  <canvas id="fireworks"></canvas>
+
+  <script>
+    const STORAGE_KEY = "lesson-builder-fiap-csharp-aula-03-api-json-tickets";
+const filters = document.querySelectorAll(".filter");
+const tickets = document.querySelectorAll(".ticket");
+const requiredTickets = [...tickets].filter(ticket => ticket.dataset.required === "true");
+const completeButtons = document.querySelectorAll(".complete-button");
+const progressBar = document.querySelector("#progress-bar");
+const progressValue = document.querySelector("#progress-value");
+const completed = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]"));
+
+filters.forEach(filter => {
+  filter.addEventListener("click", () => {
+    filters.forEach(item => item.classList.toggle("active", item === filter));
+    tickets.forEach(ticket => {
+      ticket.classList.toggle("active", ticket.id === filter.dataset.ticket);
+    });
+  });
+});
+
+completeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const ticketId = button.dataset.complete;
+    const wasCompleted = completed.has(ticketId);
+
+    if (wasCompleted) {
+      completed.delete(ticketId);
+    } else {
+      completed.add(ticketId);
+      createSparks(button);
+    }
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...completed]));
+    updateProgress(!wasCompleted);
+  });
+});
+
+document.querySelector("#clear-progress").addEventListener("click", () => {
+  completed.clear();
+  localStorage.removeItem(STORAGE_KEY);
+  updateProgress(false);
+});
+
+function updateProgress(celebrate) {
+  const requiredCompleted = requiredTickets.filter(ticket =>
+    completed.has(ticket.id)).length;
+  const percentage = requiredTickets.length === 0
+    ? 0
+    : Math.round((requiredCompleted / requiredTickets.length) * 100);
+
+  progressBar.style.width = `${percentage}%`;
+  progressValue.textContent = `${percentage}%`;
+
+  completeButtons.forEach(button => {
+    const done = completed.has(button.dataset.complete);
+    button.classList.toggle("completed", done);
+    button.textContent = done ? "Reabrir ticket" : "Marcar como concluído";
+  });
+
+  filters.forEach(filter => {
+    const done = completed.has(filter.dataset.ticket);
+    filter.classList.toggle("completed", done);
+    const label = filter.textContent.replace(/^✓\s*/, "");
+    filter.textContent = done ? `✓ ${label}` : label;
+  });
+
+  if (celebrate && percentage === 100) {
+    startFireworks(5000);
+  }
+}
+
+function createSparks(button) {
+  const rect = button.getBoundingClientRect();
+  const originX = rect.left + rect.width / 2;
+  const originY = rect.top + rect.height / 2;
+
+  for (let index = 0; index < 14; index++) {
+    const spark = document.createElement("span");
+    const angle = (Math.PI * 2 * index) / 14;
+    const distance = 28 + Math.random() * 28;
+    spark.className = "spark";
+    spark.style.left = `${originX}px`;
+    spark.style.top = `${originY}px`;
+    spark.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+    spark.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+    document.body.append(spark);
+    spark.addEventListener("animationend", () => spark.remove());
+  }
+}
+
+function startFireworks(durationMs) {
+  const canvas = document.querySelector("#fireworks");
+  const context = canvas.getContext("2d");
+  const particles = [];
+  const colors = ["#38bdf8", "#34d399", "#fbbf24", "#fb7185", "#a78bfa"];
+  const startedAt = performance.now();
+  let lastBurst = 0;
+
+  function resize() {
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  }
+
+  function burst() {
+    const x = window.innerWidth * (.15 + Math.random() * .7);
+    const y = window.innerHeight * (.15 + Math.random() * .5);
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    for (let index = 0; index < 45; index++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 1.8 + Math.random() * 4;
+      particles.push({
+        x,
+        y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1,
+        color
+      });
+    }
+  }
+
+  function frame(now) {
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    if (now - lastBurst > 280 && now - startedAt < durationMs - 700) {
+      burst();
+      lastBurst = now;
+    }
+
+    for (let index = particles.length - 1; index >= 0; index--) {
+      const particle = particles[index];
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      particle.vy += .035;
+      particle.life -= .014;
+
+      if (particle.life <= 0) {
+        particles.splice(index, 1);
+        continue;
+      }
+
+      context.globalAlpha = particle.life;
+      context.fillStyle = particle.color;
+      context.beginPath();
+      context.arc(particle.x, particle.y, 2.4, 0, Math.PI * 2);
+      context.fill();
+    }
+
+    context.globalAlpha = 1;
+
+    if (now - startedAt < durationMs || particles.length > 0) {
+      requestAnimationFrame(frame);
+    } else {
+      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    }
+  }
+
+  resize();
+  requestAnimationFrame(frame);
+}
+
+updateProgress(false);
+
+  </script>
+</body>
+</html>

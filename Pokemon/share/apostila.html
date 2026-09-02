@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Aula 3 — Integração web e arquivos</title>
+<style>
+:root {
+  --bg: #08080d;
+  --card: #14141d;
+  --card-2: #1b1b27;
+  --fg: #f5f5f7;
+  --muted: #aaaab6;
+  --accent: #ed0973;
+  --accent-2: #ff65ae;
+  --border: #30303e;
+  --warning: #facc15;
+  --danger: #fb7185;
+  --success: #4ade80;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font: 17px/1.65 "Segoe UI", system-ui, sans-serif;
+}
+.progress { position: fixed; inset: 0 0 auto; height: 4px; z-index: 100; }
+.progress span { display: block; width: 0; height: 100%; background: var(--accent); }
+.topbar {
+  position: sticky; top: 0; z-index: 90;
+  padding: .8rem max(1rem, calc((100vw - 1180px) / 2));
+  background: rgba(8, 8, 13, .94); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.brand { color: var(--accent); font-weight: 900; text-decoration: none; letter-spacing: .06em; }
+.brand span { color: var(--fg); font-weight: 600; }
+.page { max-width: 1180px; margin: auto; padding: 0 1.2rem; }
+.hero {
+  padding: 5rem 0 3rem;
+  border-bottom: 3px solid var(--accent);
+  background: radial-gradient(circle at 80% 20%, rgba(237, 9, 115, .18), transparent 35%);
+}
+.eyebrow { color: var(--accent-2); font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+h1 { max-width: 850px; margin: .2rem 0 1rem; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1; }
+.lead { max-width: 800px; color: var(--muted); font-size: 1.2rem; }
+.pills { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+.pills span { padding: .3rem .75rem; border: 1px solid var(--border); border-radius: 999px; color: var(--accent-2); }
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; padding: 3rem 0 5rem; }
+.layout > *, main, .toc { min-width: 0; }
+.toc { position: sticky; top: 4.5rem; align-self: start; display: grid; gap: .4rem; max-height: calc(100vh - 6rem); overflow: auto; }
+.toc strong { color: var(--accent); margin-bottom: .5rem; }
+.toc a { color: var(--muted); text-decoration: none; padding: .25rem 0; overflow-wrap: anywhere; }
+.toc a:hover { color: var(--fg); }
+.chapter { margin-bottom: 4.5rem; scroll-margin-top: 5rem; }
+h2 { margin: 0 0 1.4rem; color: var(--accent-2); font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.15; }
+.block-paragraph, .block-list, .block-quote, .block-table, .block-code, .callout, .cards-grid { margin: 1rem 0 1.4rem; }
+.block-code {
+  max-width: 100%; overflow: auto; padding: 1.1rem; border: 1px solid var(--border);
+  border-radius: 10px; background: #0d0d14; color: #f8d4e6;
+}
+.block-caption { color: var(--muted); font-size: .92rem; margin-top: -.8rem; }
+.block-table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.block-table th, .block-table td { padding: .7rem .8rem; border: 1px solid var(--border); text-align: left; }
+.block-table th { background: rgba(237, 9, 115, .16); color: var(--accent-2); }
+.block-quote { padding: 1rem 1.3rem; border-left: 4px solid var(--accent); background: var(--card); }
+.callout { padding: 1rem 1.2rem; border: 1px solid var(--border); border-left: 5px solid var(--accent); border-radius: 8px; background: var(--card); }
+.callout-priority, .callout-warning { border-left-color: var(--warning); }
+.callout-danger { border-left-color: var(--danger); }
+.callout-success { border-left-color: var(--success); }
+.cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.cards-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { min-width: 0; padding: 1.1rem; border: 1px solid var(--border); border-radius: 10px; background: var(--card); }
+.card strong { display: block; color: var(--accent-2); margin-bottom: .45rem; }
+.card .block-paragraph, .card .block-list { margin-bottom: 0; }
+a { color: var(--accent-2); }
+.page-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.page-nav a { text-decoration: none; font-weight: 700; }
+footer { padding: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+@media (max-width: 800px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .toc { position: static; max-height: none; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .cards-grid, .cards-cols-2 { grid-template-columns: 1fr; }
+}
+@media print {
+  .progress, .topbar, .toc, .page-nav { display: none; }
+  body { color: #111; background: #fff; font-size: 11pt; }
+  .page { max-width: none; }
+  .layout { display: block; padding-top: 1rem; }
+  .hero { padding: 1rem 0; background: none; }
+  .chapter { break-inside: avoid; margin-bottom: 2rem; }
+  .block-code, .card, .callout, .block-quote { color: #111; background: #fff; border-color: #999; }
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="reading-progress"></span></div>
+<header class="topbar">
+  <a class="brand" href="#top">FIAP <span>C# Software Development</span></a>
+</header>
+
+<div class="page" id="top">
+  <header class="hero">
+<p class="eyebrow">Aula 3</p>    <h1>Aula 3 — Integração web e arquivos</h1>
+<p class="lead">Guia rápido para consumir uma API REST, transformar a resposta em objetos C# e salvar o resultado em JSON.</p>    <div class="pills"><span>C#</span><span>HttpClient</span><span>JSON</span><span>Arquivos</span><span>PokéAPI</span></div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Neste material">
+      <strong>Neste material</strong>
+<a href="#handout-fluxo">Fluxo de integração</a><a href="#handout-entrada">Entrada do laboratório</a><a href="#handout-api-models">Modelos mínimos da PokéAPI</a><a href="#handout-conversoes">Conversões e saída</a><a href="#handout-diagnostico">Diagnóstico rápido</a>    </nav>
+
+    <main>
+      <section class="chapter" id="handout-fluxo">
+        <h2>Fluxo de integração</h2>
+        <pre class="block-code"><code>Arquivo JSON → objeto de entrada
+             → requisições HTTP
+             → respostas da API
+             → objetos internos
+             → arquivo JSON de saída
+</code></pre><div class="callout callout-priority">Não acople o arquivo final ao contrato completo de uma API externa. Mapeie apenas os dados necessários.</div>
+      </section>
+      <section class="chapter" id="handout-entrada">
+        <h2>Entrada do laboratório</h2>
+        <pre class="block-code"><code>{
+  &quot;nomes&quot;: [
+    &quot;pikachu&quot;,
+    &quot;bulbasaur&quot;,
+    &quot;charizard&quot;,
+    &quot;squirtle&quot;,
+    &quot;eevee&quot;
+  ]
+}
+</code></pre><pre class="block-code"><code>public sealed class PokemonInput
+{
+    public List&lt;string&gt; Nomes { get; init; } = [];
+}
+</code></pre>
+      </section>
+      <section class="chapter" id="handout-api-models">
+        <h2>Modelos mínimos da PokéAPI</h2>
+        <pre class="block-code"><code>public sealed class PokemonApiResponse
+{
+    public int Id { get; init; }
+    public string Name { get; init; } = &quot;&quot;;
+    public int Height { get; init; }
+    public int Weight { get; init; }
+    public PokemonSprites Sprites { get; init; } = new();
+    public List&lt;PokemonTypeSlot&gt; Types { get; init; } = [];
+}
+</code></pre><pre class="block-code"><code>public sealed class PokemonSprites
+{
+    [JsonPropertyName(&quot;front_default&quot;)]
+    public string? FrontDefault { get; init; }
+}
+
+public sealed class PokemonTypeSlot
+{
+    public PokemonType Type { get; init; } = new();
+}
+
+public sealed class PokemonType
+{
+    public string Name { get; init; } = &quot;&quot;;
+}
+</code></pre>
+      </section>
+      <section class="chapter" id="handout-conversoes">
+        <h2>Conversões e saída</h2>
+        <table class="block-table"><thead><tr><th>Campo externo</th><th>Unidade externa</th><th>Conversão</th></tr></thead><tbody><tr><td>height</td><td>decímetros</td><td><code>height / 10.0</code> para metros</td></tr><tr><td>weight</td><td>hectogramas</td><td><code>weight / 10.0</code> para quilogramas</td></tr></tbody></table><pre class="block-code"><code>var options = new JsonSerializerOptions
+{
+    WriteIndented = true,
+    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+};
+
+string json = JsonSerializer.Serialize(
+    pokemonsDetalhados, options);
+
+await File.WriteAllTextAsync(
+    &quot;pokemons-detalhados.json&quot;, json);
+</code></pre>
+      </section>
+      <section class="chapter" id="handout-diagnostico">
+        <h2>Diagnóstico rápido</h2>
+        <table class="block-table"><thead><tr><th>Sintoma</th><th>Verificação</th></tr></thead><tbody><tr><td>Arquivo não encontrado</td><td>Confirmar cópia para a pasta de saída.</td></tr><tr><td>Propriedade vazia</td><td>Comparar o nome da propriedade com o JSON.</td></tr><tr><td>Imagem nula</td><td>Confirmar o mapeamento de <code>front_default</code>.</td></tr><tr><td>Altura ou peso zero</td><td>Evitar divisão inteira.</td></tr><tr><td>Resposta 404</td><td>Conferir o nome enviado no endereço.</td></tr></tbody></table>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>Professor Rafael Cassiolato</footer>
+<script>
+function updateReadingProgress() {
+  const root = document.documentElement;
+  const scrollable = root.scrollHeight - root.clientHeight;
+  const percent = scrollable > 0 ? (root.scrollTop / scrollable) * 100 : 0;
+  document.getElementById("reading-progress").style.width = `${percent}%`;
+}
+document.addEventListener("scroll", updateReadingProgress, { passive: true });
+updateReadingProgress();
+
+</script>
+</body>
+</html>
